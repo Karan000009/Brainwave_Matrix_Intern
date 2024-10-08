@@ -4,7 +4,7 @@ import json
 import os
 
 class ATM:
-    def __init__(self, root, username):  # Corrected __init__ method
+    def __init__(self, root, username):  
         self.root = root
         self.root.title("ATM Interface")
         self.root.geometry("400x350")
@@ -12,10 +12,10 @@ class ATM:
         self.root.configure(bg="#2c3e50")
 
         self.username = username
-        self.users = self.load_users()  # Load users and balances from the JSON file
-        self.balance = self.users[self.username]["balance"]  # Load the current user's balance
+        self.users = self.load_users() e
+        self.balance = self.users[self.username]["balance"]  
 
-        # Create and place widgets
+       
         self.label = tk.Label(root, text="ATM Interface", font=("Arial", 20, "bold"), bg="#2c3e50", fg="#ecf0f1")
         self.label.pack(pady=20)
 
@@ -52,7 +52,7 @@ class ATM:
     def update_balance(self):
         """Update the displayed balance and save to JSON."""
         self.balance_label.config(text=f"Balance: ₹{self.balance}")
-        self.users[self.username]["balance"] = self.balance  # Update the current user's balance
+        self.users[self.username]["balance"] = self.balance  
         self.save_users()
 
     def deposit(self):
@@ -104,14 +104,14 @@ class ATM:
         return None
 
 class LoginPage:
-    def __init__(self, root):  # Corrected __init__ method
+    def __init__(self, root): 
         self.root = root
         self.root.title("Login")
         self.root.geometry("500x350")
         self.root.resizable(False, False)
         self.root.configure(bg="#2c3e50")
 
-        # Load users from json file
+       
         self.users = self.load_users()
 
         self.username_label = tk.Label(root, text="Username:", font=("Arial", 14), bg="#2c3e50", fg="#ecf0f1")
