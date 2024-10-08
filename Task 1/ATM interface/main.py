@@ -172,7 +172,7 @@ def main(username):
     atm = ATM(root, username)
     root.mainloop()
 
-if __name__ == "__main__":  # Corrected __main__ condition
+if __name__ == "__main__": 
     root = tk.Tk()
     login_page = LoginPage(root)
     root.mainloop()
